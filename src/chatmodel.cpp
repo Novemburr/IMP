@@ -94,9 +94,8 @@ QVariant ChatModel::data(const QModelIndex &index, int role) const
         }
         break;
     case Qt::DisplayRole:
-        return "(" + message.logInfo->channel + " @ " +
-                message.dateTime.toString("hh:mm:ss") + " " + message.sender + ")\n" +
-                message.markedUpText;
+        return message.markedUpText + " \n" +
+	       "(" + message.sender + " " + message.logInfo->channel + " @ " + message.dateTime.toString("hh:mm:ss") + " \n";
         break;
     }
 
